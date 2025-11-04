@@ -1,4 +1,4 @@
-# This repository contains Dafny programs developed for the DAIMPL Seminar . It serves as a collection of verified examples, exercises, and formal proofs implemented in Dafny, demonstrating formal verification techniques using specifications and automated reasoning.
+### This repository contains Dafny programs developed for the DAIMPL Seminar . It serves as a collection of verified examples, exercises, and formal proofs implemented in Dafny, demonstrating formal verification techniques using specifications and automated reasoning.
 
 Environment Setup 
  1. Install Dafny Use Visual Studio Code (VS Code) as your development environment and install the official Dafny extension. 
