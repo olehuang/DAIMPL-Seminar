@@ -22,3 +22,8 @@ Environment Setup
   ##### 3. Or simply save the file — Dafny can verify automatically on save (if enabled) 
   ##### Success: a green check mark appears in VS Code 
   ##### Failure: error messages and locations are shown in the Problems panel
+
+#### References:
+ 1. Dafny Reference Manual: https://dafny.org/latest/DafnyRef 
+ 2. Z3 Documentation: https://github.com/Z3Prover/z3/wiki 
+ 3. Dafny Tutorials: https://dafny.org/latest/Tutorial
