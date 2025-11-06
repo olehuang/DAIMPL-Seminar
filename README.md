@@ -31,3 +31,4 @@ Environment Setup
  1. Dafny Reference Manual: https://dafny.org/latest/DafnyRef 
  2. Z3 Documentation: https://github.com/Z3Prover/z3/wiki 
  3. Dafny Tutorials: https://dafny.org/latest/Tutorial
+ 4. Dafny GitHub repo: https://github.com/dafny-lang/dafny
