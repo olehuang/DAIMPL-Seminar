@@ -5,7 +5,7 @@ predicate sorted(a:array<int>)
     forall i,j :: 0 <= i < j <a.Length ==> a[i]<= a[j] 
 }
 
-function method findMin(a: array<int>,start:int):int
+function findMin(a: array<int>,start:int):int
     requires 0 <= start < a.Length
     reads a
     ensures start <= findMin(a,start) < a.Length
