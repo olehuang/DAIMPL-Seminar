@@ -8,6 +8,7 @@ method SelectSort(a: array<int>)
  requires a.Length >= 0
  modifies a 
  ensures sorted(a)
+ ensures multiset(a[..]) == old(multiset(a[..]))
 {
     var n := a.Length;
 
@@ -16,6 +17,7 @@ method SelectSort(a: array<int>)
       invariant 0 <= i <= n
       invariant forall k, l :: 0 <= k < l < i ==> a[k] <= a[l]
       invariant forall k, l :: 0 <= k < i && i <= l < n ==> a[k] <= a[l] 
+      invariant multiset(a[..]) == old(multiset(a[..]))
       modifies a
     {
         var minIndex := i;
