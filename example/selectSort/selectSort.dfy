@@ -27,6 +27,7 @@ method SelectSort(a: array<int>)
       // Preserve the element unchanged (no elements are lost)
       invariant multiset(a[..]) == old(multiset(a[..]))
       modifies a
+      decreases n-i //The remaining number of iterations is used to ensure the loop ends.
     {
         // minIndex: Records the position of the smallest element in the range i..n
         var minIndex := i;
@@ -35,12 +36,13 @@ method SelectSort(a: array<int>)
 
         // Inner loop: Find the smallest element in a[i..n).
         while j < n
-          invariant i < n
-          invariant i <= minIndex < n
-          invariant i+1 <= j <= n 
+          invariant i < n       // The outer index i must be within the valid range, ensuring that a[i] is a valid position.
+          invariant i <= minIndex < n // minIndex always points to a valid index within the current search interval [i..n).
+          invariant i+1 <= j <= n    // j is the current scan pointer, traversing the interval [i+1 .. n], keeping the boundaries of j valid.
           // Maintenance: a[minIndex] is always the minimum value of the current interval i..j
           invariant forall k :: i <= k < j ==> a[minIndex] <=  a[k]
           modifies a
+          decreases n-j //The remaining number of iterations is used to ensure the loop ends.
         {
             // If a smaller value is found, update minIndex.
             if a[j] < a[minIndex] {
