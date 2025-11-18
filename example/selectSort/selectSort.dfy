@@ -54,7 +54,7 @@ method SelectSort(a: array<int>)
         i:= i+1;
     }
 }
-
+//Print the elements of the array
 method PrintArr(a:array<int>)
    requires a.Length >= 0
 {
@@ -75,7 +75,7 @@ method PrintArr(a:array<int>)
 method Main(){
     print "Hello world\n";
     var a:array<int>:= new int[][4,1,5,8,7,6,2];
-    PrintArr(a);
-    SelectSort(a);
-    PrintArr(a);
+    PrintArr(a);//unsorted Array
+    SelectSort(a); // selectSort reference
+    PrintArr(a); // sorted Array
 }
