@@ -8,16 +8,21 @@ predicate sorted(a:array<int>)
 method SelectSort(a: array<int>)
  requires a.Length >= 0 //requires input array length >=0
  modifies a             //can only a modify  
- ensures sorted(a)      // The array is ultimately sorted in ascending order after algorithmus end.                 
- ensures multiset(a[..]) /*The elements of the sorted array are the same as the elements of */
+ ensures sorted(a)      // The array is ultimately sorted in ascending 
+                        // order after algorithmus end.                 
+ 
+ ensures multiset(a[..]) /*The elements of the sorted array are 
+                           the same as the elements of */
  == old(multiset(a[..]))// the unsorted array (the elements are not changed).
                                                 
 {
     var n := a.Length;
-    //i indicates the position where the correct minimum element should be placed, 
-    //incrementing from 0 to n-1.
+    // i indicates the position where the 
+    // correct minimum element should be placed, 
+    // incrementing from 0 to n-1.
     var i:= 0;
-    //Outer loop: In each round, swap the minimum value of the remaining part to a[i].
+    // Outer loop: In each round, swap the
+    // minimum value of the remaining part to a[i].
     while i < n 
       invariant 0 <= i <= n
       // The processed portion [0..i) must have already been sorted
