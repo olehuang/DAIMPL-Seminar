@@ -14,6 +14,7 @@ Environment Setup
     ##### 4. Once installed, VS Code will automatically recognize `.dfy` files and provide verification and execution support
 
 3. Install the Z3 SMT Solver Dafny uses the Z3 theorem prover as its backend verification engine.
+   (Note that Windows installation requires adding the path to the .exe file to the system environment variable PATH.)
  Z3 Repository: https://github.com/Z3Prover/z3
 
 ### To verify a Dafny program: 
@@ -24,8 +25,14 @@ Environment Setup
   ##### Failure: error messages and locations are shown in the Problems panel
   
 ### To run a Dafny program:
+  #### first run:
    1. Open any `.dfy` file in VS Code 
-   2. Run the command “Dafny: Run” via Ctrl + Shift + P 
+   2. Run the command “Dafny: Run” via Ctrl + Shift + P
+   3. Alternatively, right-click in the document editing area -> Dafny -> Run
+  #### After modife file run Dafny program:
+   1. Delete all files except the `.dfy` file.
+   2. Run the command “Dafny: Run” via Ctrl + Shift + P
+   3. Alternatively, right-click in the document editing area -> Dafny -> Run
 
 #### References:
  1. Dafny Reference Manual: https://dafny.org/latest/DafnyRef 
