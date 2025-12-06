@@ -20,12 +20,29 @@ module LinkedList{
             length := 0;
         }
 
-        method Insert(v:int)
+        method Insert(pos: nat, value:int)
            modifies this
+           requires pos <= length
            ensures length == old(length) + 1
-           ensures head != null && head.value == v
         {
-            head := new Node(v,head);
+            if pos == 0{
+                var n := new Node(value,head);
+                head := n;
+                length := length +1;
+                return;
+            }
+
+            var curr := head;
+            var i := 0;
+            while i < pos -1
+              invariant 0 <= i <= pos - 1
+              invariant curr != null 
+            {
+                curr := curr.next;
+                i := i+1;
+            }
+            var newNode := new Node(value,curr.next);
+            curr.next := newNode;
             length := length + 1;
         }
         //insert Element in LinkedList in postion pos

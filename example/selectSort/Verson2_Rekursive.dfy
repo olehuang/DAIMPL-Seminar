@@ -22,6 +22,7 @@ method SelectSort(a: array<int>)
  requires a.Length >= 0
  modifies a 
  ensures sorted(a)
+ ensures multiset(a[..]) == old(multiset(a[..]))
 {
     var n := a.Length;
 
