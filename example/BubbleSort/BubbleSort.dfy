@@ -14,14 +14,10 @@ method BubbleSortDescending(a: array<int>)
 {
   // Step 1: Determine the array length
     var n := a.Length;
-
-
     // If the array is empty or has only one element, it is already sorted
     if n <= 1 {
         return;
     }
-
-
     // Step 2: Nested loops to select the maximum value
     var i := 0;
     while i < n
